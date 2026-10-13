@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Encuesta de Onboarding 2026 - Alphatec Scientific</title>
+<style>
+:root{--p:#05177f;--p2:#0a2bb8;--or:#d43817;--bg:#f4f5fb;--card:#fff;--tx:#1f2340;--mu:#6b7090;--ok:#16a34a;--wa:#f59e0b;--bad:#dc2626;--bd:#e4e6f2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh}
+.head{background:#fff;text-align:center;padding:14px 16px 10px;border-bottom:4px solid var(--or)}
+.head img,.head svg{height:62px;max-width:100%}
+.hero{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:26px 20px 40px;text-align:center}
+.hero h1{font-size:1.45rem}.hero p{opacity:.9;margin-top:6px;font-size:.95rem}
+.wrap{max-width:880px;margin:-22px auto 40px;padding:0 16px}
+.card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 6px 24px rgba(40,40,90,.08);margin-bottom:16px;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h2{font-size:1.15rem;margin-bottom:6px}
+.mu{color:var(--mu);font-size:.9rem}
+input[type=password],input[type=text],input[type=number]{width:100%;padding:12px 14px;border:1.5px solid var(--bd);border-radius:10px;font-size:1rem;outline:none;transition:.2s;background:#fff}
+input:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(5,23,127,.12)}
+#code{margin-top:12px}
+.btn{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border:0;padding:13px 22px;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:14px;transition:.2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(5,23,127,.3)}
+.btn.sec{background:#fff;color:var(--p);border:1.5px solid var(--p)}
+.btn.red{background:#fff;color:var(--bad);border:1.5px solid var(--bad)}
+.btn.sm{padding:9px 14px;font-size:.85rem;margin-top:0}
+.err{color:var(--bad);font-size:.88rem;margin-top:8px;min-height:1.1em}
+.sec-t{font-size:.78rem;font-weight:800;color:var(--or);text-transform:uppercase;letter-spacing:.06em;margin:4px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--bd)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+.grid .full{grid-column:1/-1}
+.f label{display:block;font-size:.82rem;font-weight:600;margin-bottom:5px;color:var(--tx)}
+.q{margin-bottom:22px}
+.q .t{font-weight:700;color:var(--p);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+.q .s{margin:4px 0 10px}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.scale button{padding:12px 0;border:1.5px solid var(--bd);background:#fff;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;color:var(--mu);transition:.15s}
+.scale button:hover{border-color:var(--p);color:var(--p)}
+.scale button.on{background:var(--p);border-color:var(--p);color:#fff;transform:scale(1.05)}
+.leg{display:flex;justify-content:space-between;font-size:.72rem;color:var(--mu);margin-top:5px}
+.prog{height:6px;background:var(--bd);border-radius:6px;overflow:hidden;margin:14px 0 18px}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--or),#f06a3f);width:0;transition:.3s}
+.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.kpi{background:var(--card);border-radius:14px;padding:16px;box-shadow:0 4px 14px rgba(40,40,90,.07);text-align:center}
+.kpi b{display:block;font-size:1.9rem}.kpi span{color:var(--mu);font-size:.82rem}
+.bar{margin:14px 0}
+.bar .l{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:5px;gap:8px}
+.track{height:14px;background:#eceefa;border-radius:8px;overflow:hidden}
+.fill{height:100%;border-radius:8px;transition:width .6s}
+.dist{display:flex;gap:4px;align-items:flex-end;height:60px;margin-top:8px}
+.dist div{flex:1;text-align:center;font-size:.7rem;color:var(--mu)}
+.dist i{display:block;background:#b9c0ee;border-radius:4px 4px 0 0;margin-bottom:2px}
+.tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.75rem;font-weight:700;color:#fff}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+th,td{padding:8px 6px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}
+th{color:var(--mu);font-weight:600}
+.rank{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bd)}
+.thanks{text-align:center;padding:30px 10px}.thanks .e{font-size:3rem}
+.hide{display:none}
+@media(max-width:560px){.card{padding:18px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Encuesta de Onboarding 2026</h1>
+  <p>Tu opinión nos ayuda a mejorar la experiencia de ingreso</p>
+</div>
+
+<div class="wrap">
+
+  <!-- ACCESO -->
+  <div id="vAccess" class="card">
+    <h2>Ingresa tu código de acceso</h2>
+    <p class="mu">Introduce el código que te compartió Recursos Humanos.</p>
+    <input type="password" id="code" placeholder="Código de acceso" autocomplete="off">
+    <div class="err" id="aerr"></div>
+    <button class="btn" onclick="login()">Ingresar</button>
+  </div>
+
+  <!-- ENCUESTA -->
+  <div id="vSurvey" class="hide">
+    <div class="card">
+      <h2>¡Bienvenido/a al equipo! 👋</h2>
+      <p class="mu">Te tomará menos de 3 minutos. Tus respuestas nos ayudarán a mejorar.</p>
+      <div class="prog"><i id="pg"></i></div>
+
+      <div class="sec-t">Datos de referencia</div>
+      <div class="grid">
+        <div class="f full"><label>Nombres y apellidos *</label><input type="text" id="nom" maxlength="100" placeholder="Ej: María Pérez Gómez"></div>
+        <div class="f"><label>Edad *</label><input type="number" id="edad" min="16" max="80" placeholder="Ej: 28"></div>
+        <div class="f"><label>Puesto *</label><input type="text" id="puesto" maxlength="80" placeholder="Ej: Analista de laboratorio"></div>
+        <div class="f full"><label>Departamento / Área *</label><input type="text" id="depto" maxlength="80" list="deps" placeholder="Ej: Ventas">
+          <datalist id="deps"><option>Administración</option><option>Comercial</option><option>Logística</option><option>Operaciones</option><option>Recursos Humanos</option><option>Contabilidad y Finanzas</option><option>Marketing</option><option>Soporte Técnico</option><option>Calidad</option></datalist></div>
+      </div>
+
+      <div class="sec-t">Tu experiencia de ingreso</div>
+      <div id="qs"></div>
+      <div class="q">
+        <div class="t">5 · Persona de apoyo</div>
+        <div class="s">¿Quién fue la persona que te brindó el apoyo necesario durante tu integración?</div>
+        <input type="text" id="who" placeholder='Nombre (o escribe "Ninguna")' maxlength="80">
+      </div>
+      <div class="err" id="serr"></div>
+      <button class="btn" onclick="send()">Enviar respuestas</button>
+    </div>
+  </div>
+
+  <!-- GRACIAS -->
+  <div id="vThanks" class="card thanks hide">
+    <div class="e">🎉</div>
+    <h2>¡Gracias por tu tiempo!</h2>
+    <p class="mu">Tu opinión es muy valiosa para nosotros.</p>
+    <button class="btn sec" onclick="exitAll()">Cerrar</button>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="vDash" class="hide">
+    <div class="top">
+      <h2 style="margin:0">📊 Dashboard de Onboarding 2026</h2>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn sm sec" onclick="loadDash()">↻ Actualizar</button>
+        <button class="btn sm sec" onclick="csv()">⬇ CSV</button>
+        <button class="btn sm red" onclick="wipe()">Borrar datos</button>
+        <button class="btn sm" onclick="exitAll()">Salir</button>
+      </div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="card"><h2>Promedio por pregunta</h2><p class="mu">Menos de 4.0 se considera señal de alerta.</p><div id="avgs"></div></div>
+    <div class="card"><h2>Promedio por departamento</h2><p class="mu">Promedio general de las 4 preguntas por área.</p><div id="deptAvg"></div></div>
+    <div class="card"><h2>Distribución de respuestas</h2><div id="dists"></div></div>
+    <div class="card"><h2>Personas de apoyo mencionadas</h2><p class="mu">Tus embajadores internos del onboarding.</p><div id="rank"></div></div>
+    <div class="card"><h2>Respuestas individuales</h2><div style="overflow-x:auto"><table id="tbl"></table></div></div>
+  </div>
+</div>
+
+<script>
+const SURVEY_CODE="2026", DASH_CODE="74749679", PFX="onb2026:";
+const Q=[
+ {k:"jefe",t:"1 · Jefe directo",s:"Mi jefe directo me brinda el apoyo, la orientación y la comunicación que necesito para desempeñarme bien en mis primeros días.",short:"Jefe directo"},
+ {k:"funciones",t:"2 · Claridad de funciones",s:"Tengo claras mis funciones, responsabilidades y lo que se espera de mí en mi puesto.",short:"Claridad de funciones"},
+ {k:"bienvenida",t:"3 · Bienvenida",s:"Me sentí bien recibido/a y acogido/a por la empresa y mi equipo durante mi ingreso.",short:"Bienvenida"},
+ {k:"continuidad",t:"4 · Proyección de continuidad",s:"Me visualizo continuando y creciendo en esta empresa a mediano plazo.",short:"Proyección de continuidad"}
+];
+const ans={};
+let data=[];
+
+/* Almacenamiento: compartido dentro de Claude; local (por navegador) si se descarga el HTML */
+const S={
+ async set(k,v){try{if(window.storage){await window.storage.set(k,v,true);return}}catch(e){} localStorage.setItem(k,v)},
+ async get(k){try{if(window.storage){const r=await window.storage.get(k,true);return r?r.value:null}}catch(e){} return localStorage.getItem(k)},
+ async del(k){try{if(window.storage){await window.storage.delete(k,true);return}}catch(e){} localStorage.removeItem(k)},
+ async list(){try{if(window.storage){const r=await window.storage.list(PFX,true);return r?r.keys:[]}}catch(e){}
+  const o=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith(PFX))o.push(k)}return o}
+};
+
+const $=id=>document.getElementById(id);
+function show(id){["vAccess","vSurvey","vThanks","vDash"].forEach(x=>$(x).classList.toggle("hide",x!==id))}
+
+function login(){
+ const c=$("code").value.trim();
+ if(c===SURVEY_CODE){buildSurvey();show("vSurvey")}
+ else if(c===DASH_CODE){show("vDash");loadDash()}
+ else{$("aerr").textContent="Código incorrecto. Inténtalo nuevamente."}
+}
+$("code").addEventListener("keydown",e=>{if(e.key==="Enter")login()});
+function exitAll(){$("code").value="";$("aerr").textContent="";Object.keys(ans).forEach(k=>delete ans[k]);show("vAccess")}
+
+function buildSurvey(){
+ $("qs").innerHTML=Q.map(q=>`<div class="q"><div class="t">${q.t}</div><div class="s">${q.s}</div>
+ <div class="scale" id="sc-${q.k}">${[1,2,3,4,5].map(n=>`<button onclick="pick('${q.k}',${n})">${n}</button>`).join("")}</div>
+ <div class="leg"><span>Totalmente en desacuerdo</span><span>Totalmente de acuerdo</span></div></div>`).join("");
+ ["nom","edad","puesto","depto","who"].forEach(i=>$(i).value="");
+ $("serr").textContent="";$("pg").style.width="0";
+}
+function pick(k,n){
+ ans[k]=n;
+ [...$("sc-"+k).children].forEach((b,i)=>b.classList.toggle("on",i+1===n));
+ $("pg").style.width=(Object.keys(ans).length/Q.length*100)+"%";
+}
+async function send(){
+ const nom=$("nom").value.trim(),edad=parseInt($("edad").value,10),puesto=$("puesto").value.trim(),depto=$("depto").value.trim(),who=$("who").value.trim();
+ if(!nom||!puesto||!depto){$("serr").textContent="Completa tus nombres, puesto y departamento.";return}
+ if(!edad||edad<16||edad>80){$("serr").textContent="Ingresa una edad válida.";return}
+ if(Object.keys(ans).length<Q.length){$("serr").textContent="Por favor responde las 4 preguntas de la escala.";return}
+ if(!who){$("serr").textContent='Indica el nombre de la persona de apoyo o escribe "Ninguna".';return}
+ const r={nombre:nom,edad,puesto,depto,...ans,apoyo:who,fecha:new Date().toISOString()};
+ try{await S.set(PFX+Date.now()+"-"+Math.random().toString(36).slice(2,7),JSON.stringify(r));
+  Object.keys(ans).forEach(k=>delete ans[k]);show("vThanks")}
+ catch(e){$("serr").textContent="No se pudo guardar. Inténtalo otra vez."}
+}
+
+async function loadDash(){
+ const keys=await S.list();data=[];
+ for(const k of keys){try{const v=await S.get(k);if(v)data.push(JSON.parse(v))}catch(e){}}
+ data.sort((a,b)=>a.fecha<b.fecha?1:-1);
+ render();
+}
+const col=v=>v>=4?"var(--ok)":v>=3?"var(--wa)":"var(--bad)";
+const isNone=s=>/^(ninguna|ninguno|nadie|no)$/i.test(String(s).trim());
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function render(){
+ const n=data.length;
+ const avg=k=>n?data.reduce((s,r)=>s+r[k],0)/n:0;
+ const all=n?Q.reduce((s,q)=>s+avg(q.k),0)/Q.length:0;
+ const none=data.filter(r=>isNone(r.apoyo)).length;
+ const alerts=Q.filter(q=>n&&avg(q.k)<4).length;
+ const ages=data.map(r=>r.edad).filter(Boolean);
+ const ageAvg=ages.length?(ages.reduce((a,b)=>a+b,0)/ages.length).toFixed(1):"–";
+ $("kpis").innerHTML=`<div class="kpi"><b>${n}</b><span>Respuestas</span></div>
+  <div class="kpi"><b style="color:${col(all)}">${n?all.toFixed(2):"–"}</b><span>Promedio general</span></div>
+  <div class="kpi"><b style="color:${alerts?"var(--bad)":"var(--ok)"}">${alerts}</b><span>Preguntas en alerta</span></div>
+  <div class="kpi"><b>${n?Math.round(none/n*100):0}%</b><span>Sin persona de apoyo</span></div>
+  <div class="kpi"><b>${ageAvg}</b><span>Edad promedio</span></div>`;
+ $("avgs").innerHTML=n?Q.map(q=>{const a=avg(q.k);return `<div class="bar"><div class="l"><span>${q.short}</span>
+  <span><b>${a.toFixed(2)}</b> <span class="tag" style="background:${col(a)}">${a>=4?"Óptimo":a>=3?"Atención":"Crítico"}</span></span></div>
+  <div class="track"><div class="fill" style="width:${a/5*100}%;background:${col(a)}"></div></div></div>`}).join(""):'<p class="mu">Aún no hay respuestas.</p>';
+ const dm={};data.forEach(r=>{const k=(r.depto||"Sin dato").trim().toLowerCase();dm[k]=dm[k]||{n:r.depto||"Sin dato",c:0,s:0};dm[k].c++;dm[k].s+=Q.reduce((s,q)=>s+r[q.k],0)/Q.length});
+ const dl=Object.values(dm).sort((a,b)=>b.s/b.c-a.s/a.c);
+ $("deptAvg").innerHTML=dl.length?dl.map(d=>{const a=d.s/d.c;return `<div class="bar"><div class="l"><span>${esc(d.n)} <span class="mu">(${d.c})</span></span><b>${a.toFixed(2)}</b></div>
+  <div class="track"><div class="fill" style="width:${a/5*100}%;background:${col(a)}"></div></div></div>`}).join(""):'<p class="mu">Sin datos.</p>';
+ $("dists").innerHTML=n?Q.map(q=>{const c=[1,2,3,4,5].map(v=>data.filter(r=>r[q.k]===v).length);const m=Math.max(...c,1);
+  return `<div style="margin-bottom:18px"><b style="font-size:.9rem">${q.short}</b><div class="dist">${c.map((x,i)=>`<div><i style="height:${x/m*44}px"></i>${i+1}<br><b>${x}</b></div>`).join("")}</div></div>`}).join(""):'<p class="mu">Sin datos.</p>';
+ const cnt={};data.forEach(r=>{const nm=String(r.apoyo||"").trim();if(!nm||isNone(nm))return;const key=nm.toLowerCase();cnt[key]=cnt[key]||{n:nm,c:0};cnt[key].c++});
+ const rk=Object.values(cnt).sort((a,b)=>b.c-a.c);
+ $("rank").innerHTML=rk.length?rk.map((x,i)=>`<div class="rank"><span>${i+1}. ${esc(x.n)}</span><b>${x.c} mención${x.c>1?"es":""}</b></div>`).join(""):'<p class="mu">Sin menciones todavía.</p>';
+ $("tbl").innerHTML=`<tr><th>Fecha</th><th>Nombres</th><th>Edad</th><th>Puesto</th><th>Departamento</th>${Q.map(q=>`<th>${q.short.split(" ")[0]}</th>`).join("")}<th>Apoyo</th></tr>`+
+  data.map(r=>`<tr><td>${new Date(r.fecha).toLocaleDateString("es-PE")}</td><td>${esc(r.nombre)}</td><td>${esc(r.edad)}</td><td>${esc(r.puesto)}</td><td>${esc(r.depto)}</td>${Q.map(q=>`<td>${r[q.k]}</td>`).join("")}<td>${esc(r.apoyo)}</td></tr>`).join("");
+}
+function csv(){
+ if(!data.length){alert("No hay datos para exportar.");return}
+ const h=["fecha","nombre","edad","puesto","depto",...Q.map(q=>q.k),"apoyo"];
+ const rows=data.map(r=>h.map(k=>'"'+String(r[k]??"").replace(/"/g,'""')+'"').join(","));
+ const b=new Blob(["\ufeff"+[h.join(","),...rows].join("\n")],{type:"text/csv"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="onboarding_2026.csv";a.click();
+}
+async function wipe(){
+ if(!confirm("¿Seguro que deseas borrar TODAS las respuestas? Esta acción no se puede deshacer."))return;
+ for(const k of await S.list())await S.del(k);
+ loadDash();
+}
+</script>
+</body>
+</html>
